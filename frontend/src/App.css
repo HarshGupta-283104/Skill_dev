@@ -1,34 +1,257 @@
-.App-logo {
-    height: 40vmin;
-    pointer-events: none;
+/* App layout overrides - keep layout left-aligned, not globally centered */
+
+.app-root {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: radial-gradient(circle at top left, #f4f4ff 0, #f9fafb 40%, #ffffff 100%);
 }
 
-@media (prefers-reduced-motion: no-preference) {
-    .App-logo {
-        animation: App-logo-spin infinite 20s linear;
-    }
+.app-shell {
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 1.5rem 1.25rem 2.5rem;
 }
 
-.App-header {
-    background-color: #0f0f10;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    font-size: calc(10px + 2vmin);
-    color: white;
+.app-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.75rem 1.25rem;
+  border-radius: 9999px;
+  background: rgba(255, 255, 255, 0.9);
+  box-shadow: 0 14px 40px rgba(15, 23, 42, 0.06);
+  backdrop-filter: blur(18px);
+  border: 1px solid rgba(15, 23, 42, 0.04);
 }
 
-.App-link {
-    color: #61dafb;
+.app-nav-title {
+  display: flex;
+  flex-direction: column;
 }
 
-@keyframes App-logo-spin {
-    from {
-        transform: rotate(0deg);
-    }
-    to {
-        transform: rotate(360deg);
-    }
+.app-nav-title-main {
+  font-size: 1.15rem;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  color: rgb(15, 23, 42);
+}
+
+.app-nav-title-sub {
+  font-size: 0.75rem;
+  color: rgb(100, 116, 139);
+}
+
+.app-nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.app-nav-user {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.app-nav-user-name {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: rgb(15, 23, 42);
+}
+
+.app-nav-user-meta {
+  font-size: 0.7rem;
+  color: rgb(148, 163, 184);
+}
+
+.app-main {
+  margin-top: 1.75rem;
+}
+
+.app-page-header {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  margin-bottom: 1.25rem;
+}
+
+.app-page-title {
+  font-size: 1.6rem;
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  color: rgb(15, 23, 42);
+}
+
+.app-page-description {
+  font-size: 0.9rem;
+  color: rgb(100, 116, 139);
+}
+
+.app-grid-two {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.app-grid-three {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.app-footer-note {
+  margin-top: 2rem;
+  font-size: 0.75rem;
+  color: rgb(148, 163, 184);
+}
+
+@media (max-width: 768px) {
+  .app-shell {
+    padding-inline: 1rem;
+  }
+
+  .app-nav {
+    border-radius: 1rem;
+    padding-inline: 1rem;
+  }
+
+  .app-grid-two,
+  .app-grid-three {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .app-nav-title-main {
+    font-size: 1rem;
+  }
+}
+
+/* Simple chip-style badge for levels */
+.level-pill {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.2rem 0.6rem;
+  border-radius: 9999px;
+  font-size: 0.7rem;
+  font-weight: 500;
+}
+
+.level-pill-beginner {
+  background: rgba(59, 130, 246, 0.08);
+  color: rgb(37, 99, 235);
+}
+
+.level-pill-intermediate {
+  background: rgba(16, 185, 129, 0.08);
+  color: rgb(5, 122, 85);
+}
+
+.level-pill-advanced {
+  background: rgba(234, 179, 8, 0.12);
+  color: rgb(161, 98, 7);
+}
+
+/* Chat styles */
+.chat-history {
+  max-height: 420px;
+  overflow-y: auto;
+  padding-right: 0.25rem;
+}
+
+.chat-message {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+}
+
+.chat-message-role {
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.chat-bubble-user {
+  align-self: flex-end;
+  background: linear-gradient(135deg, #0f172a, #1e293b);
+  color: white;
+}
+
+.chat-bubble-assistant {
+  align-self: flex-start;
+  background: #f9fafb;
+  color: #0f172a;
+  border: 1px solid rgba(15, 23, 42, 0.06);
+}
+
+.chat-bubble {
+  padding: 0.6rem 0.8rem;
+  border-radius: 0.9rem;
+  font-size: 0.85rem;
+  line-height: 1.5;
+  max-width: 80%;
+}
+
+.chat-input-row {
+  display: flex;
+  gap: 0.5rem;
+  align-items: flex-end;
+}
+
+/* Docs code block */
+.docs-code {
+  font-size: 0.8rem;
+  background: #020617;
+  color: #e5e7eb;
+  border-radius: 0.75rem;
+  padding: 0.9rem 1rem;
+  overflow-x: auto;
+}
+
+.docs-sidebar-item {
+  border-radius: 0.6rem;
+  padding: 0.4rem 0.6rem;
+  font-size: 0.85rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.docs-sidebar-item-active {
+  background: rgba(15, 23, 42, 0.06);
+}
+
+.docs-sidebar-item-inactive {
+  background: transparent;
+}
+
+.docs-sidebar-item-label {
+  display: flex;
+  flex-direction: column;
+}
+
+.docs-sidebar-item-title {
+  font-size: 0.85rem;
+  font-weight: 500;
+}
+
+.docs-sidebar-item-track {
+  font-size: 0.7rem;
+  color: rgb(148, 163, 184);
+}
+
+/* Simple spinner */
+.loader-spinner {
+  border-radius: 9999px;
+  width: 1.25rem;
+  height: 1.25rem;
+  border: 2px solid rgba(148, 163, 184, 0.5);
+  border-top-color: rgb(59, 130, 246);
+  animation: loader-spin 0.7s linear infinite;
+}
+
+@keyframes loader-spin {
+  to {
+    transform: rotate(360deg);
+  }
 }
