@@ -1,95 +1,95 @@
 {
   "summary": {
     "total_tests": 14,
-    "passed_tests": 13,
-    "failed_tests": 1,
-    "success_rate": 92.85714285714286
+    "passed_tests": 14,
+    "failed_tests": 0,
+    "success_rate": 100.0
   },
   "test_results": [
     {
       "test_name": "API Health Check",
       "success": true,
       "details": "Status: 200 (expected 200)",
-      "timestamp": "2025-11-21T05:59:01.440407"
+      "timestamp": "2025-11-21T05:59:38.749189"
     },
     {
       "test_name": "Student Registration",
       "success": true,
       "details": "Status: 201 (expected 201)",
-      "timestamp": "2025-11-21T05:59:01.744516"
+      "timestamp": "2025-11-21T05:59:39.034549"
     },
     {
       "test_name": "Student Login",
       "success": true,
       "details": "Status: 200 (expected 200)",
-      "timestamp": "2025-11-21T05:59:02.054272"
+      "timestamp": "2025-11-21T05:59:39.294647"
     },
     {
       "test_name": "Get Student Levels",
-      "success": false,
-      "details": "Status: 404 (expected 200), Response: {\"detail\":\"Unknown track\"}",
-      "timestamp": "2025-11-21T05:59:02.095632"
+      "success": true,
+      "details": "Status: 200 (expected 200)",
+      "timestamp": "2025-11-21T05:59:39.332649"
     },
     {
       "test_name": "Get WebDev Questions",
       "success": true,
       "details": "Status: 200 (expected 200)",
-      "timestamp": "2025-11-21T05:59:02.133385"
+      "timestamp": "2025-11-21T05:59:39.368306"
     },
     {
       "test_name": "Get ML Questions",
       "success": true,
       "details": "Status: 200 (expected 200)",
-      "timestamp": "2025-11-21T05:59:02.197547"
+      "timestamp": "2025-11-21T05:59:39.407882"
     },
     {
       "test_name": "Get WebDev Questions for Test",
       "success": true,
       "details": "Status: 200 (expected 200)",
-      "timestamp": "2025-11-21T05:59:02.237030"
+      "timestamp": "2025-11-21T05:59:39.442911"
     },
     {
       "test_name": "Submit WebDev Test",
       "success": true,
       "details": "Status: 200 (expected 200)",
-      "timestamp": "2025-11-21T05:59:02.284017"
+      "timestamp": "2025-11-21T05:59:39.479606"
     },
     {
       "test_name": "Get ML Questions for Test",
       "success": true,
       "details": "Status: 200 (expected 200)",
-      "timestamp": "2025-11-21T05:59:02.318405"
+      "timestamp": "2025-11-21T05:59:39.517461"
     },
     {
       "test_name": "Submit ML Test",
       "success": true,
       "details": "Status: 200 (expected 200)",
-      "timestamp": "2025-11-21T05:59:02.355310"
+      "timestamp": "2025-11-21T05:59:39.552855"
     },
     {
       "test_name": "Get Recommendations",
       "success": true,
       "details": "Status: 200 (expected 200)",
-      "timestamp": "2025-11-21T05:59:02.391364"
+      "timestamp": "2025-11-21T05:59:39.589116"
     },
     {
       "test_name": "Get Documentation",
       "success": true,
       "details": "Status: 200 (expected 200)",
-      "timestamp": "2025-11-21T05:59:02.428405"
+      "timestamp": "2025-11-21T05:59:39.623206"
     },
     {
       "test_name": "Chat with HTML query",
       "success": true,
       "details": "Status: 200 (expected 200)",
-      "timestamp": "2025-11-21T05:59:02.459705"
+      "timestamp": "2025-11-21T05:59:39.658240"
     },
     {
       "test_name": "Unauthorized Access Test",
       "success": true,
       "details": "Status: 401 (expected 401)",
-      "timestamp": "2025-11-21T05:59:02.490751"
+      "timestamp": "2025-11-21T05:59:39.691897"
     }
   ],
-  "timestamp": "2025-11-21T05:59:02.491184"
+  "timestamp": "2025-11-21T05:59:39.692464"
 }
