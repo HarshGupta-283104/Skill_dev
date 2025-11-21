@@ -671,6 +671,12 @@ async def login_student(payload: StudentLogin):
 # ---------------------------- Tests Endpoints -----------------------------
 
 
+@api_router.get("/tests/levels", response_model=LevelsResponse)
+async def get_levels(current_student: Dict[str, Any] = Depends(get_current_student)):
+    student_id = ObjectId(current_student["id"])
+    return await get_latest_levels_for_student(student_id)
+
+
 @api_router.get("/tests/{track}", response_model=Dict[str, Any])
 async def get_test_questions(track: str, _: Dict[str, Any] = Depends(get_current_student)):
     if track not in {"webdev", "ml"}:
@@ -736,12 +742,6 @@ async def submit_test(
         level=level,
         message=message,
     )
-
-
-@api_router.get("/tests/levels", response_model=LevelsResponse)
-async def get_levels(current_student: Dict[str, Any] = Depends(get_current_student)):
-    student_id = ObjectId(current_student["id"])
-    return await get_latest_levels_for_student(student_id)
 
 
 # ------------------------ Recommendations Endpoint ------------------------
