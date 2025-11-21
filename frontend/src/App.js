@@ -738,9 +738,10 @@ function TestPage({ track }) {
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-2">
                     {q.options.map((opt, optIndex) => {
                       const inputId = `${q.id}-${optIndex}`;
+                      const optionKey = `${q.id}-${optIndex}`;
                       return (
                         <label
-                          key={optId}
+                          key={optionKey}
                           htmlFor={inputId}
                           className="flex cursor-pointer items-center gap-2 rounded-lg border border-slate-200/80 bg-slate-50/60 px-3 py-2 text-sm hover:border-slate-300"
                           data-testid={`test-option-${q.id}-${optIndex}`}
