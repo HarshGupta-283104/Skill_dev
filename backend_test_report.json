@@ -10,86 +10,86 @@
       "test_name": "API Health Check",
       "success": true,
       "details": "Status: 200 (expected 200)",
-      "timestamp": "2025-11-21T05:59:38.749189"
+      "timestamp": "2025-11-21T06:03:28.442016"
     },
     {
       "test_name": "Student Registration",
       "success": true,
       "details": "Status: 201 (expected 201)",
-      "timestamp": "2025-11-21T05:59:39.034549"
+      "timestamp": "2025-11-21T06:03:28.702536"
     },
     {
       "test_name": "Student Login",
       "success": true,
       "details": "Status: 200 (expected 200)",
-      "timestamp": "2025-11-21T05:59:39.294647"
+      "timestamp": "2025-11-21T06:03:28.961273"
     },
     {
       "test_name": "Get Student Levels",
       "success": true,
       "details": "Status: 200 (expected 200)",
-      "timestamp": "2025-11-21T05:59:39.332649"
+      "timestamp": "2025-11-21T06:03:28.997179"
     },
     {
       "test_name": "Get WebDev Questions",
       "success": true,
       "details": "Status: 200 (expected 200)",
-      "timestamp": "2025-11-21T05:59:39.368306"
+      "timestamp": "2025-11-21T06:03:29.033249"
     },
     {
       "test_name": "Get ML Questions",
       "success": true,
       "details": "Status: 200 (expected 200)",
-      "timestamp": "2025-11-21T05:59:39.407882"
+      "timestamp": "2025-11-21T06:03:29.068360"
     },
     {
       "test_name": "Get WebDev Questions for Test",
       "success": true,
       "details": "Status: 200 (expected 200)",
-      "timestamp": "2025-11-21T05:59:39.442911"
+      "timestamp": "2025-11-21T06:03:29.101810"
     },
     {
       "test_name": "Submit WebDev Test",
       "success": true,
       "details": "Status: 200 (expected 200)",
-      "timestamp": "2025-11-21T05:59:39.479606"
+      "timestamp": "2025-11-21T06:03:29.137122"
     },
     {
       "test_name": "Get ML Questions for Test",
       "success": true,
       "details": "Status: 200 (expected 200)",
-      "timestamp": "2025-11-21T05:59:39.517461"
+      "timestamp": "2025-11-21T06:03:29.173930"
     },
     {
       "test_name": "Submit ML Test",
       "success": true,
       "details": "Status: 200 (expected 200)",
-      "timestamp": "2025-11-21T05:59:39.552855"
+      "timestamp": "2025-11-21T06:03:29.211253"
     },
     {
       "test_name": "Get Recommendations",
       "success": true,
       "details": "Status: 200 (expected 200)",
-      "timestamp": "2025-11-21T05:59:39.589116"
+      "timestamp": "2025-11-21T06:03:29.244908"
     },
     {
       "test_name": "Get Documentation",
       "success": true,
       "details": "Status: 200 (expected 200)",
-      "timestamp": "2025-11-21T05:59:39.623206"
+      "timestamp": "2025-11-21T06:03:29.278360"
     },
     {
       "test_name": "Chat with HTML query",
       "success": true,
       "details": "Status: 200 (expected 200)",
-      "timestamp": "2025-11-21T05:59:39.658240"
+      "timestamp": "2025-11-21T06:03:29.312525"
     },
     {
       "test_name": "Unauthorized Access Test",
       "success": true,
       "details": "Status: 401 (expected 401)",
-      "timestamp": "2025-11-21T05:59:39.691897"
+      "timestamp": "2025-11-21T06:03:29.351501"
     }
   ],
-  "timestamp": "2025-11-21T05:59:39.692464"
+  "timestamp": "2025-11-21T06:03:29.351948"
 }
