@@ -741,7 +741,7 @@ function TestPage({ track }) {
                       const optionKey = `${q.id}-${optIndex}`;
                       return (
                         <label
-                          key={optionKey}
+                          key={inputId}
                           htmlFor={inputId}
                           className="flex cursor-pointer items-center gap-2 rounded-lg border border-slate-200/80 bg-slate-50/60 px-3 py-2 text-sm hover:border-slate-300"
                           data-testid={`test-option-${q.id}-${optIndex}`}
