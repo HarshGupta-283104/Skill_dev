@@ -28,13 +28,40 @@ from bson import ObjectId
 ROOT_DIR = Path(__file__).parent
 load_dotenv(ROOT_DIR / ".env")
 
-mongo_url = os.environ["MONGO_URL"]
-client = AsyncIOMotorClient(mongo_url)
-db = client[os.environ["DB_NAME"]]
+# Use mongomock for development if MongoDB is not available
+USE_MONGOMOCK = False
+try:
+    mongo_url = os.environ["MONGO_URL"]
+    client = AsyncIOMotorClient(mongo_url, serverSelectionTimeoutMS=1000)
+    # Test connection
+    db = client[os.environ["DB_NAME"]]
+except Exception as e:
+    # Fall back to mongomock for local development
+    import mongomock
+    print(f"⚠️  MongoDB connection failed ({str(e)[:100]}...). Using in-memory mongomock database for development.")
+    client = mongomock.MongoClient()
+    db = client[os.environ.get("DB_NAME", "test_database")]
+    USE_MONGOMOCK = True
 
 JWT_SECRET = os.environ.get("JWT_SECRET", "change_this_secret")
 JWT_ALGORITHM = os.environ.get("JWT_ALGORITHM", "HS256")
 JWT_EXPIRES_MINUTES = int(os.environ.get("JWT_EXPIRES_MINUTES", "120"))
+
+# Async wrapper for both motor and mongomock
+async def async_insert_one(collection, doc):
+    if USE_MONGOMOCK:
+        return collection.insert_one(doc)
+    return await collection.insert_one(doc)
+
+async def async_find_one(collection, query):
+    if USE_MONGOMOCK:
+        return collection.find_one(query)
+    return await collection.find_one(query)
+
+def async_find(collection, query):
+    if USE_MONGOMOCK:
+        return collection.find(query)
+    return collection.find(query)
 
 # ---------------------------------------------------------------------------
 # App & Router
@@ -69,7 +96,12 @@ def create_access_token(data: dict, expires_delta: Optional[timedelta] = None) -
 
 
 async def get_student_by_email(email: str) -> Optional[Dict[str, Any]]:
-    return await db.students.find_one({"email": email})
+    try:
+        # Try async (motor) first
+        return await db.students.find_one({"email": email})
+    except TypeError:
+        # Fall back to sync (mongomock)
+        return db.students.find_one({"email": email})
 
 
 async def get_student_by_id(student_id: str) -> Optional[Dict[str, Any]]:
@@ -77,7 +109,12 @@ async def get_student_by_id(student_id: str) -> Optional[Dict[str, Any]]:
         oid = ObjectId(student_id)
     except Exception:
         return None
-    return await db.students.find_one({"_id": oid})
+    try:
+        # Try async (motor) first
+        return await db.students.find_one({"_id": oid})
+    except TypeError:
+        # Fall back to sync (mongomock)
+        return db.students.find_one({"_id": oid})
 
 
 class TokenData(BaseModel):

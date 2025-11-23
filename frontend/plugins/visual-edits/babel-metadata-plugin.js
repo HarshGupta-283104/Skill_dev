@@ -8,7 +8,7 @@ const fs = require("fs");
 const EXTENSIONS = [".tsx", ".ts", ".jsx", ".js"];
 const PROJECT_ROOT = path.resolve(__dirname, '../..'); // frontend root (../../ from plugins/visual-edits/)
 const SRC_ALIAS = path.resolve(PROJECT_ROOT, "src");
-
+ 
 const RESOLVE_CACHE = new Map(); // key: fromFile::source -> absPath | null
 const FILE_AST_CACHE = new Map(); // absPath -> { ast, mtimeMs }
 const PORTAL_COMP_CACHE = new Map(); // key: absPath::exportName -> boolean
